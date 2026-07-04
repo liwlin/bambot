@@ -1,0 +1,39 @@
+{
+  "name": "feetech.js",
+  "version": "0.1.2",
+  "description": "javascript sdk for feetech servos",
+  "main": "index.mjs",
+  "files": [
+    "*.mjs",
+    "*.ts",
+    "scripts/*.mjs"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=12.17.0"
+  },
+  "scripts": {
+    "test": "node scripts/verify-scs225.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liwlin/bambot/tree/main/feetech.js"
+  },
+  "keywords": [
+    "feetech",
+    "sdk",
+    "js",
+    "javascript",
+    "sts3215",
+    "3215",
+    "scs",
+    "scs3215",
+    "st3215"
+  ],
+  "author": "timqian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liwlin/bambot/issues"
+  },
+  "homepage": "https://github.com/liwlin/bambot/tree/main/feetech.js"
+}
