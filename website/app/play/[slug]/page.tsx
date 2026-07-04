@@ -1,21 +1,22 @@
-"use client";
-import { useParams } from "next/navigation";
 import { notFound } from "next/navigation";
 
-import RobotLoader from "@/components/playground/RobotLoader";
 import { robotConfigMap } from "@/config/robotConfig";
+import { PlayPageClient } from "./PlayPageClient";
 
-export default function Page() {
-  const params = useParams();
-  const slug = params?.slug as string;
+export function generateStaticParams() {
+  return Object.keys(robotConfigMap).map((slug) => ({ slug }));
+}
+
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
 
   if (!robotConfigMap[slug]) {
     notFound();
   }
 
-  return (
-    <div className="relative w-screen h-dvh">
-      <RobotLoader robotName={slug} />
-    </div>
-  );
+  return <PlayPageClient slug={slug} />;
 }

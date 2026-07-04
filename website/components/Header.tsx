@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { RiNotification2Line } from "@remixicon/react";
 
 import { NotificationDialog } from "@/components/NotificationDialog";
+import { publicPath } from "@/lib/publicPath";
 
 export default function Header() {
   const [showNotification, setShowNotification] = useState(false);
@@ -34,7 +35,7 @@ export default function Header() {
     <>
       <header className="text-white w-full p-5 sm:px-10 flex justify-between items-center fixed top-0 left-0 right-0 z-50">
         <Link href="/">
-            <img src="/favicon.ico" alt="BamBot Logo" className="w-8 h-8" />
+            <img src={publicPath("/favicon.ico")} alt="BamBot Logo" className="w-8 h-8" />
         </Link>
         <div className="flex  gap-4 items-center">
           <button

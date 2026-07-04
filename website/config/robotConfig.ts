@@ -1,4 +1,6 @@
 // Define camera settings type
+import { publicPath } from "@/lib/publicPath";
+
 type CameraSettings = {
   position: [number, number, number];
   fov: number;
@@ -45,12 +47,12 @@ export type RobotConfig = {
 // Define configuration map per slug
 export const robotConfigMap: { [key: string]: RobotConfig } = {
   "so-arm100": {
-    urdfUrl: "/URDFs/so101.urdf",
+    urdfUrl: publicPath("/URDFs/so101.urdf"),
     // urdfUrl: "/so-101/so101.urdf",
     // urdfUrl: "https://lomlytpintjpeu4a.public.blob.vercel-storage.com/so101.urdf",
     // urdfUrl: "https://huggingface.co/datasets/bambot/robot-URDFs/resolve/main/URDF/so_arm100.urdf",
     // urdfUrl: "https://hf-mirror.com/datasets/bambot/robot-URDFs/resolve/main/URDF/so_arm100.urdf",
-    image: "/so-arm100.jpg",
+    image: publicPath("/so-arm100.jpg"),
     assembleLink: "/assemble/so-101",
     camera: { position: [-30, 10, 30], fov: 12 },
     orbitTarget: [1, 2, 0],
@@ -122,8 +124,8 @@ export const robotConfigMap: { [key: string]: RobotConfig } = {
     `,
   },
   "bambot-b0": {
-    urdfUrl: "/URDFs/bambot_v0.urdf",
-    image: "/bambot_v0.jpg",
+    urdfUrl: publicPath("/URDFs/bambot_v0.urdf"),
+    image: publicPath("/bambot_v0.jpg"),
     assembleLink: "https://github.com/liwlin/bambot/tree/main/hardware",
     camera: { position: [-30, 25, 28], fov: 25 },
     orbitTarget: [0, 2, 0],
@@ -176,8 +178,8 @@ export const robotConfigMap: { [key: string]: RobotConfig } = {
     `,
   },
   "bambot-b0-base": {
-    urdfUrl: "/URDFs/bambot_v0_base.urdf",
-    image: "/bambot_v0_base.png",
+    urdfUrl: publicPath("/URDFs/bambot_v0_base.urdf"),
+    image: publicPath("/bambot_v0_base.png"),
     assembleLink: "https://github.com/liwlin/bambot/tree/main/hardware",
     camera: { position: [-30, 25, 28], fov: 25 },
     orbitTarget: [0, 2, 0],
@@ -195,8 +197,8 @@ export const robotConfigMap: { [key: string]: RobotConfig } = {
     If the user describes roughly wanting to make it longer or shorter, adjust the duration accordingly.`,
   },
   sts3215: {
-    urdfUrl: "/URDFs/sts3215.urdf",
-    image: "/sts3215.png",
+    urdfUrl: publicPath("/URDFs/sts3215.urdf"),
+    image: publicPath("/sts3215.png"),
     assembleLink: "",
     camera: { position: [10, 10, 10], fov: 12 },
     orbitTarget: [0.5, 1, 0],
@@ -212,8 +214,8 @@ export const robotConfigMap: { [key: string]: RobotConfig } = {
     systemPrompt: `You can help control the sts3215 robot by pressing keyboard keys. Use the keyPress tool to simulate key presses. Each key will be held down for 1 second by default. The robot can be controlled with the following keys: "1" and "q" for rotation.`,
   },
   "unitree-go2": {
-    urdfUrl: "/URDFs/unitree-go2/go2.urdf",
-    image: "/unitree-go2.png",
+    urdfUrl: publicPath("/URDFs/unitree-go2/go2.urdf"),
+    image: publicPath("/unitree-go2.png"),
     // assembleLink: "/",
     camera: { position: [-20, 15, 30], fov: 30 },
     orbitTarget: [1, 4, 0],
@@ -263,8 +265,8 @@ export const robotConfigMap: { [key: string]: RobotConfig } = {
     systemPrompt: `You can help control the unitree-go2 robot by pressing keyboard keys. Use the keyPress tool to simulate key presses. Each key will be held down for 1 second by default. If the user describes roughly wanting to make it longer or shorter, adjust the duration accordingly.`,
   },
   "unitree-g1": {
-    urdfUrl: "/URDFs/unitree-g1/g1_23dof.urdf",
-    image: "/unitree-g1.png",
+    urdfUrl: publicPath("/URDFs/unitree-g1/g1_23dof.urdf"),
+    image: publicPath("/unitree-g1.png"),
     // assembleLink: "/",
     camera: { position: [-20, 15, 30], fov: 40 },
     orbitTarget: [1, 10, 0],

@@ -17,3 +17,17 @@ Local verification used for this fork:
 pnpm exec tsc --noEmit --pretty false
 pnpm build
 ```
+
+## GitHub Pages deployment
+
+The public website is deployed from the `gh-pages` branch as a static Next.js export.
+
+For the `liwlin/bambot` project page, build with:
+
+```bash
+NEXT_STATIC_EXPORT=true NEXT_PUBLIC_BASE_PATH=/bambot pnpm build
+```
+
+The generated site lives in `website/out` and is published to:
+
+https://liwlin.github.io/bambot/
